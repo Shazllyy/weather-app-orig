@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="py-5 mb-5">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-2">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="./images/cloudy-weather (1).gif"
+                    alt="weather logo"
+                    width="50"
+                  />
+                </a>
+              </div>
+              <div class="col-10">
+                <div
+                  class="d-flex justify-content-center position-relative"
+                  role="search"
+                >
+                  <i
+                    id="searchIcon"
+                    class="fa-solid fa-magnifying-glass fa-lg position-absolute"
+                  ></i>
+                  <input
+                    id="searchCity"
+                    class="form-control me-2 py-3"
+                    type="search"
+                    placeholder="Search city...."
+                    aria-label="Search"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-2 mt-4 mt-md-3 d-flex justify-content-center align-content-center"
+          >
+            <span id="userLocation" class="text-secondary"> </span>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div cl></div>
+        <section>
+          <div class="row">
+            <div class="col-lg-3 mb-5">
+              <div
+                class="main-card box-one-bg rounded-5 text-black p-4 position-relative"
+              >
+                <div
+                  class="card-head d-flex justify-content-between box-one-hd px-4 rounded-top-5 position-absolute top-0 end-0 start-0"
+                >
+                  <span id="fullDay" class="day-time"> </span>
+                  <span id="dayTime" class="day-time"></span>
+                </div>
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <h2 class="main-degree fw-bold num">
+                      <span class="current-degree"></span>&#176;C
+                    </h2>
+                    <div>
+                      <img
+                        class="condition-icon img-fluid"
+                        width="90px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <i class="fa-solid fa-mountain-city"></i>
+                    <span id="queryCity"> </span>,
+                    <span id="wCondition"> </span>
+                  </div>
+                  <div class="mb-1">
+                    <i
+                      class="fa-solid fa-temperature-arrow-up text-danger-emphasis"
+                    ></i>
+                    <span class="text-secondary"> High: </span>
+                    <span class="fw-bold num"
+                      ><span id="dayHigh"></span>&#176;</span
+                    >
+                    <i
+                      class="fa-solid fa-temperature-arrow-down text-info-emphasis"
+                    ></i>
+                    <span class="text-secondary"> Low: </span>
+                    <span class="fw-bold num"
+                      ><span id="nightLow"></span>&#176;</span
+                    >
+                  </div>
+
+                  <div class="mb-1">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <span class="text-secondary"> Feels Like: </span>
+                    <span class="fw-bold num"
+                      ><span id="feelsLike"></span>&#176;</span
+                    >
+                  </div>
+                  <div class="mb-1">
+                    <i class="fa-solid fa-wind text-white-50"></i>
+                    <span class="text-secondary"> Wind: </span>
+                    <span class="fw-bold num"
+                      ><span id="windSpeed"></span> km/h</span
+                    >
+                  </div>
+                  <div class="">
+                    <i class="fa-solid fa-droplet text-info"></i>
+                    <span class="text-secondary"> Humidity: </span>
+                    <span class="fw-bold num"
+                      ><span id="dayHumidity"></span>%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="row">
+                <div class="col-lg-2 col-sm-4 col-6 mb-3">
+                  <div
+                    class="main-card box-two-bg py-4 rounded-5 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <h4
+                      class="day-time forecast-day pb-3 border-bottom text-warning"
+                    ></h4>
+                    <div>
+                      <img
+                        class="img-fluid forecast-icon"
+                        width="70px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                    <div>
+                      <span class="fs-3 num"
+                        ><span class="forecast-high"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num"
+                        ><span class="forecast-low"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num text-warning forecast-con"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-6 mb-3">
+                  <div
+                    class="main-card box-two-bg py-4 rounded-5 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <h4
+                      class="day-time forecast-day pb-3 border-bottom text-warning"
+                    ></h4>
+                    <div>
+                      <img
+                        class="img-fluid forecast-icon"
+                        width="70px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                    <div>
+                      <span class="fs-3 num"
+                        ><span class="forecast-high"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num"
+                        ><span class="forecast-low"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num text-warning forecast-con"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-6 mb-3">
+                  <div
+                    class="main-card box-two-bg py-4 rounded-5 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <h4
+                      class="day-time forecast-day pb-3 border-bottom text-warning"
+                    ></h4>
+                    <div>
+                      <img
+                        class="img-fluid forecast-icon"
+                        width="70px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                    <div>
+                      <span class="fs-3 num"
+                        ><span class="forecast-high"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num"
+                        ><span class="forecast-low"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num text-warning forecast-con"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-6 mb-3">
+                  <div
+                    class="main-card box-two-bg py-4 rounded-5 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <h4
+                      class="day-time forecast-day pb-3 border-bottom text-warning"
+                    ></h4>
+                    <div>
+                      <img
+                        class="img-fluid forecast-icon"
+                        width="70px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                    <div>
+                      <span class="fs-3 num"
+                        ><span class="forecast-high"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num"
+                        ><span class="forecast-low"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num text-warning forecast-con"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-6 mb-3">
+                  <div
+                    class="main-card box-two-bg py-4 rounded-5 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <h4
+                      class="day-time forecast-day pb-3 border-bottom text-warning"
+                    ></h4>
+                    <div>
+                      <img
+                        class="img-fluid forecast-icon"
+                        width="70px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                    <div>
+                      <span class="fs-3 num"
+                        ><span class="forecast-high"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num"
+                        ><span class="forecast-low"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num text-warning forecast-con"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-6 mb-3">
+                  <div
+                    class="main-card box-two-bg py-4 rounded-5 d-flex flex-column align-items-center justify-content-between"
+                  >
+                    <h4
+                      class="day-time forecast-day pb-3 border-bottom text-warning"
+                    ></h4>
+                    <div>
+                      <img
+                        class="img-fluid forecast-icon"
+                        width="70px"
+                        src=""
+                        alt="weather condition image"
+                      />
+                    </div>
+                    <div>
+                      <span class="fs-3 num"
+                        ><span class="forecast-high"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num"
+                        ><span class="forecast-low"></span>&#176;C</span
+                      >
+                    </div>
+                    <div>
+                      <span class="num text-warning forecast-con"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- <footer class="m-auto">
+      <div class="">
+        <div><p>Powered by</p></div>
+      </div>
+    </footer> -->
+    <footer
+      class="d-flex flex-wrap justify-content-center text-center mt-4 mb-3"
+    >
+      <div>
+        <div>
+          <p class="mb-1">
+            Powered by
+            <a
+              class="text-decoration-none text-warning"
+              href="https://www.weatherapi.com/"
+              target="_blank"
+              >weatherapi</a
+            >
+            &
+            <a
+              class="text-decoration-none text-info"
+              href="https://www.abstractapi.com/"
+              target="_blank"
+              >abstractapi</a
+            >
+          </p>
+        </div>
+        <div>
+          <p class="mb-1">
+            <sup>&#169;</sup> 2023
+            <a
+              class="text-decoration-none text-info"
+              href="https://www.linkedin.com/in/imostafarh/"
+              target="_blank"
+              >Mohamed elshazly</a
+            >
+          </p>
+        </div>
+        <div>
+          <a
+            class="text-decoration-none text-warning"
+            href="https://github.com/Shazllyy?tab=repositories"
+            target="_blank"
+            ><i class="fa-brands fa-github fa-xl me-3"></i
+          ></a>
+          <a
+            class="text-decoration-none text-warning"
+            href="https://www.linkedin.com/in/mohamed-elshazly-3a7238149/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin fa-xl"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
