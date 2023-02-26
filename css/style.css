@@ -1,0 +1,147 @@
+:root {
+  --main-bg: #101014;
+  --text-color: #fff;
+  --text2-color: #acacae;
+  --line-color: #323234;
+  --secondary-color: #bbd8ec;
+  --box11-color: #90b0c7;
+  --box2-color: #1b1a1d;
+  --box3-color: #1e1e1e;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  font-family: "Rubik", sans-serif;
+}
+
+.num {
+  font-family: "Changa", sans-serif;
+}
+
+.s-color {
+  color: var(--secondary-color);
+}
+.t2-color {
+  color: var(--text2-color);
+}
+
+.box-one-bg {
+  background-color: var(--secondary-color);
+}
+.box-one-hd {
+  background-color: var(--box11-color);
+}
+
+.box-two-bg {
+  background-color: var(--box2-color);
+}
+
+#searchIcon {
+  left: 1rem;
+  top: 1.2rem;
+}
+
+#searchCity {
+  background-color: var(--box3-color);
+  border-color: transparent;
+  color: #fff;
+  border-radius: 2rem;
+  padding-left: 3rem;
+
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+#searchCity::placeholder {
+  color: var(--text2-color);
+}
+
+#userLocation {
+  font-size: 0.8rem;
+}
+
+.main-card {
+  min-height: 21rem;
+  cursor: pointer;
+  transition: filter, transform, 500ms;
+  -webkit-transition: filter, transform, 500ms;
+  -moz-transition: filter, transform, 500ms;
+  -ms-transition: filter, transform, 500ms;
+  -o-transition: filter, transform, 500ms;
+}
+
+.main-card:hover {
+  filter: brightness(1.06);
+  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  -webkit-filter: brightness(1.06);
+}
+.card-head {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.card-body {
+  margin-top: 2.2rem;
+}
+
+.day-time {
+  font-size: 1rem;
+}
+.main-degree {
+  font-size: 6rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .day-time {
+    font-size: 1.5rem;
+  }
+  .main-degree {
+    font-size: 4rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .day-time {
+    font-size: 2rem;
+  }
+  .main-degree {
+    font-size: 5rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {
+  ...;
+} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .day-time {
+    font-size: 1.2rem;
+  }
+  .main-degree {
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .day-time {
+    font-size: 1.5rem;
+  }
+  .main-degree {
+    font-size: 3.5rem;
+  }
+}
+.forecast-con {
+  font-size: 0.8rem;
+}
